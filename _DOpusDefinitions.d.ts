@@ -50,12 +50,12 @@ interface DOpusActivateListerData {
 interface DOpusActivateTabData {
 
 	/**
-	 * Returns a Tab object representing the tab that has become active.
+	 * Returns a Tab object representing the tab that has become active.
 	 */
 	readonly newTab: DOpusTab;
 
 	/**
-	 * Returns a Tab object representing the tab that has gone inactive.
+	 * Returns a Tab object representing the tab that has gone inactive.
 	 */
 	readonly oldTab: DOpusTab;
 
@@ -134,7 +134,7 @@ interface DOpusAfterFolderChangeData {
 	readonly result: boolean;
 
 	/**
-	 * Returns a Tab object representing the tab that read the folder.
+	 * Returns a Tab object representing the tab that read the folder.
 	 */
 	readonly tab: DOpusTab;
 
@@ -150,7 +150,7 @@ interface DOpusAfterFolderChangeData {
 interface DOpusAlias extends String {
 
 	/**
-	 * Returns the target of the alias as a Path object.
+	 * Returns the target of the alias as a Path object.
 	 */
 	readonly path: DOpusPath;
 
@@ -215,7 +215,7 @@ interface DOpusArgs {
 	 *
 	 * The type returned by each property is also defined by the template. In the above example, name would return a string and size an int.
 	 *
-	 * A /S argument returns a bool, a /N argument returns an int, and all other argument types return a string. Note that a /O argument will also return a bool if no string value is provided on the command line.
+	 * A /S argument returns a bool, a /N argument returns an int, and all other argument types return a string. Note that a /O argument will also return a bool if no string value is provided on the command line.
 	 *
 	 * If an argument is marked in the template as /M (multiple) then it returns a Vector containing elements of the appropriate type.
 	 *
@@ -236,14 +236,14 @@ interface DOpusArgs {
  *
  * @see {DOpusAudioMeta}
  *
- * @returns {string} Returns a string indicating the intended use for this cover art. Possible values are:
+ * @returns {string} Returns a string indicating the intended use for this cover art. Possible values are:
  *
  * *artist, back, band, bandlogo, colorfulfish* (this is unfortunately part of the ID3 specification), *composer, conductor, front, icon, illustration, leadartist, leaflet, location, lyricist, media, other, otherfileicon, performance, publisherlogo, recording, vidcap.*
  */
 interface DOpusAudioCoverArt extends String {
 
 	/**
-	 * Returns a Blob object representing the actual image data.
+	 * Returns a Blob object representing the actual image data.
 	 */
 	readonly data: DOpusBlob;
 
@@ -273,7 +273,7 @@ interface DOpusAudioCoverArt extends String {
 	readonly mime: string;
 
 	/**
-	 * Returns a FileSize object representing the size of the image data.
+	 * Returns a FileSize object representing the size of the image data.
 	 */
 	readonly size: DOpusFileSize;
 
@@ -437,7 +437,7 @@ interface DOpusAudioMeta {
 	readonly mp3Year: any;
 
 	/**
-	 * Returns a collection of AudioCoverArt objects representing any cover art imagery stored in the audio file.
+	 * Returns a collection of AudioCoverArt objects representing any cover art imagery stored in the audio file.
 	 *
 	 * The default value of this property returns the number of cover art images - for performance reasons, you should check whether this is greater than 0 before enumerating or accessing individual items in the collection.
 	 */
@@ -463,7 +463,7 @@ interface DOpusBeforeFolderChangeData {
 	readonly initial: boolean;
 
 	/**
-	 * Returns a Path object representing the new path that is to be read.
+	 * Returns a Path object representing the new path that is to be read.
 	 */
 	readonly path: DOpusPath;
 
@@ -477,7 +477,7 @@ interface DOpusBeforeFolderChangeData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the tab that is changing folder.
+	 * Returns a Tab object representing the tab that is changing folder.
 	 */
 	readonly tab: DOpusTab;
 
@@ -495,7 +495,7 @@ interface DOpusBeforeFolderChangeData {
 interface DOpusBlob {
 
 	/**
-	 * Returns a FileSize object representing the size of this Blob in bytes.
+	 * Returns a FileSize object representing the size of this Blob in bytes.
 	 */
 	readonly size: DOpusFileSize;
 
@@ -649,7 +649,7 @@ interface DOpusClickData {
 interface DOpusCloseListerData {
 
 	/**
-	 * Returns a Lister object representing the Lister that is closing.
+	 * Returns a Lister object representing the Lister that is closing.
 	 */
 	readonly lister: DOpusLister;
 
@@ -690,7 +690,7 @@ interface DOpusCloseTabData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the tab that is closing.
+	 * Returns a Tab object representing the tab that is closing.
 	 */
 	readonly tab: DOpusTab;
 
@@ -774,12 +774,12 @@ interface DOpusCommand {
 	deselect: boolean;
 
 	/**
-	 * Returns a Path object that represents the destination folder of this command. If a destination tab is set, this will be the path in the tab. You can not set this property directly - instead, use either the SetDest or SetDestTab methods to change the destination folder.
+	 * Returns a Path object that represents the destination folder of this command. If a destination tab is set, this will be the path in the tab. You can not set this property directly - instead, use either the SetDest or SetDestTab methods to change the destination folder.
 	 */
 	readonly dest: DOpusPath;
 
 	/**
-	 * Returns a Tab object that represents the destination tab for this command (if it has one - not all commands require a destination). You can not set this property directly - instead, use the SetDestTab method to change the destination tab.
+	 * Returns a Tab object that represents the destination tab for this command (if it has one - not all commands require a destination). You can not set this property directly - instead, use the SetDestTab method to change the destination tab.
 	 */
 	readonly destTab: DOpusTab;
 
@@ -789,7 +789,7 @@ interface DOpusCommand {
 	readonly fileCount: number;
 
 	/**
-	 * Returns a collection of all Item objects that represent the files and folders this command is to act upon. You can not modify this collection directly - instead you can use the various methods (ClearFiles, SetFiles, AddFile, RemoveFile, etc.) to modify the list of items to act upon.
+	 * Returns a collection of all Item objects that represent the files and folders this command is to act upon. You can not modify this collection directly - instead you can use the various methods (ClearFiles, SetFiles, AddFile, RemoveFile, etc.) to modify the list of items to act upon.
 	 */
 	readonly files: DOpusItem;
 
@@ -799,7 +799,7 @@ interface DOpusCommand {
 	readonly lineCount: number;
 
 	/**
-	 * Returns a Progress object that you can use to display a progress indicator to the user.
+	 * Returns a Progress object that you can use to display a progress indicator to the user.
 	 */
 	readonly progress: DOpusProgress;
 
@@ -809,17 +809,17 @@ interface DOpusCommand {
 	readonly results: DOpusResults;
 
 	/**
-	 * Returns a Path object that represents the source folder of this command. If a source tab is set, this will be the path in the tab. You can not set this property directly - instead, use either the SetSource or SetSourceTab methods to change the source folder.
+	 * Returns a Path object that represents the source folder of this command. If a source tab is set, this will be the path in the tab. You can not set this property directly - instead, use either the SetSource or SetSourceTab methods to change the source folder.
 	 */
 	readonly source: DOpusPath;
 
 	/**
-	 * Returns a Tab object that represents the source tab for this command. You can not set this property directly - instead, use the SetSourceTab method to change the source tab.
+	 * Returns a Tab object that represents the source tab for this command. You can not set this property directly - instead, use the SetSourceTab method to change the source tab.
 	 */
 	readonly sourceTab: DOpusTab;
 
 	/**
-	 * This Vars object represents all defined variables with command scope (that are scoped to this function - e.g. that were set using the @set directive).
+	 * This Vars object represents all defined variables with command scope (that are scoped to this function - e.g. that were set using the @set directive).
 	 */
 	readonly vars: DOpusVars;
 
@@ -987,7 +987,7 @@ declare var Command: DOpusCommand;
 interface DOpusConfigChangeData {
 
 	/**
-	 * Returns a Vector containing the names of the configuration items that were modified.
+	 * Returns a Vector containing the names of the configuration items that were modified.
 	 */
 	readonly changed: DOpusVector<string>;
 
@@ -1007,7 +1007,7 @@ interface DOpusControl {
 	readonly bg: string;
 
 	/**
-	 * For a list view control, returns a DialogListColumns object that lets you query or modify the columns in Details mode.
+	 * For a list view control, returns a DialogListColumns object that lets you query or modify the columns in Details mode.
 	 */
 	readonly columns: DOpusDialogListColumns;
 
@@ -1048,12 +1048,12 @@ interface DOpusControl {
 	 *
 	 * Note that for combo box controls, this property is only valid for an editable combo - that is, one that you can type your own text into. You can use this property to set or query the current value of the editable text.
 	 *
-	 * For a static control set to "image" mode you can also provide an Image object that you obtained from the DOpus.LoadImage or Script.LoadImage methods.
+	 * For a static control set to "image" mode you can also provide an Image object that you obtained from the DOpus.LoadImage or Script.LoadImage methods.
 	 */
 	readonly label: DOpusImage;
 
 	/**
-	 * For a list view control, lets you change or query the current view mode. Valid values are icon, details, smallicon, list.
+	 * For a list view control, lets you change or query the current view mode. Valid values are icon, details, smallicon, list.
 	 */
 	readonly mode: string;
 
@@ -1264,42 +1264,42 @@ interface DOpusCustomFieldData extends Object {
 interface DOpusDate extends Date {
 
 	/**
-	 * Get or set the day value of the date.
+	 * Get or set the day value of the date.
 	 */
 	day: number;
 
 	/**
-	 * Get or set the hour value of the date.
+	 * Get or set the hour value of the date.
 	 */
 	hour: number;
 
 	/**
-	 * Get or set the minute value of the date.
+	 * Get or set the minute value of the date.
 	 */
 	min: number;
 
 	/**
-	 * Get or set the month value of the date.
+	 * Get or set the month value of the date.
 	 */
 	month: number;
 
 	/**
-	 * Get or set the milliseconds value of the date.
+	 * Get or set the milliseconds value of the date.
 	 */
 	ms: number;
 
 	/**
-	 * Get or set the seconds value of the date.
+	 * Get or set the seconds value of the date.
 	 */
 	sec: number;
 
 	/**
-	 * Get the day-of-the-week value of the date.
+	 * Get the day-of-the-week value of the date.
 	 */
 	readonly wday: number;
 
 	/**
-	 * Get or set the year value of the date.
+	 * Get or set the year value of the date.
 	 */
 	readonly year: number;
 
@@ -1456,7 +1456,7 @@ interface DOpusDialog {
 	cx: number;
 
 	/**
-	 * For script dialogs marked as resizable, this property lets you override the height of the dialog defined in the resource - although note you can't resize a dialog smaller than its initial size.
+	 * For script dialogs marked as resizable, this property lets you override the height of the dialog defined in the resource - although note you can't resize a dialog smaller than its initial size.
 	 */
 	cy: number;
 
@@ -1468,7 +1468,7 @@ interface DOpusDialog {
 	defValue: string;
 
 	/**
-	 * Allows you to change the default button (i.e. the action that will occur if the user hits enter) in the dialog. Normally the first button is the default - this has a defid of 1. The second button would have a defid of 2, and so on. If a dialog has more than one button then by definition the very last button is the "cancel" button, and this has a defid of 0.
+	 * Allows you to change the default button (i.e. the action that will occur if the user hits enter) in the dialog. Normally the first button is the default - this has a defid of 1. The second button would have a defid of 2, and so on. If a dialog has more than one button then by definition the very last button is the "cancel" button, and this has a defid of 0.
 	 */
 	defId: number;
 
@@ -1480,14 +1480,14 @@ interface DOpusDialog {
 	/**
 	 * Use this to cause the dialog to automatically disable another window when it's displayed. The user will be unable to click or type in the disabled window until the dialog is closed. Normally if you use this you would set this to the same value as the window property.
 	 *
-	 * You can provide either a Lister or a Tab object, or another Dialog. If you are showing this dialog in response to the OnAboutScript event, you can also pass the value of the AboutData.window property.
+	 * You can provide either a Lister or a Tab object, or another Dialog. If you are showing this dialog in response to the OnAboutScript event, you can also pass the value of the AboutData.window property.
 	 */
 	disable_window: DOpusLister;
 
 	/**
-	 * Displays one of several standard icons in the top-left corner of the dialog, which can be used, for example, to indicate the severity of an error condition. The valid values for this property are warning, error, info and question.
+	 * Displays one of several standard icons in the top-left corner of the dialog, which can be used, for example, to indicate the severity of an error condition. The valid values for this property are warning, error, info and question.
 	 *
-	 * When used with a script dialog this property lets you control the icon shown in the dialog's title bar. In this instance, instead of a string you can also provide an Image object that you obtained from the DOpus.LoadImage or Script.LoadImage methods. Note that the image must have been loaded from a .ico file.
+	 * When used with a script dialog this property lets you control the icon shown in the dialog's title bar. In this instance, instead of a string you can also provide an Image object that you obtained from the DOpus.LoadImage or Script.LoadImage methods. Note that the image must have been loaded from a .ico file.
 	 */
 	icon: DOpusImage;
 
@@ -1535,14 +1535,14 @@ interface DOpusDialog {
 	message: string;
 
 	/**
-	 * For script dialogs this property retrieves or sets the current dialog opacity level, from 0 (totally transparent) to 255 (totally opaque).
+	 * For script dialogs this property retrieves or sets the current dialog opacity level, from 0 (totally transparent) to 255 (totally opaque).
 	 */
 	opacity: number;
 
 	/**
 	 * This is a collection of five options that will be displayed as checkboxes in the dialog. Unlike the choices / list scrolling checkbox list, these options are displayed as physical checkbox controls. By default the five checkboxes are uninitialized and won't be displayed, but if you assign a label to any of them they will be shown to the user.
 	 *
-	 * When the Show method returns you can obtain the state of the checkboxes using the state property of each DialogOption object.
+	 * When the Show method returns you can obtain the state of the checkboxes using the state property of each DialogOption object.
 	 */
 	options: DOpusDialogOption;
 
@@ -1552,14 +1552,14 @@ interface DOpusDialog {
 	password: boolean;
 
 	/**
-	 * When used with a script dialog this property lets you control the dialog's position on screen. Accepted values are:
+	 * When used with a script dialog this property lets you control the dialog's position on screen. Accepted values are:
 	 *
 	 * * **center** - center the dialog over the parent window (the default)
 	 * * **absolute** - specify an absolute position using the x and y properties
-	 * * **parent** - position relative to the parent window (using x and y)
+	 * * **parent** - position relative to the parent window (using x and y)
 	 * * **monitor** - position relative to the current monitor (using x and y)
 	 *
-	 * Except when set to "center" the x and y properties can be used to adjust the dialog's position.
+	 * Except when set to "center" the x and y properties can be used to adjust the dialog's position.
 	 */
 	position: string;
 
@@ -1616,19 +1616,19 @@ interface DOpusDialog {
 	want_resize: boolean;
 
 	/**
-	 * Use this to specify the parent window of the dialog. The dialog will appear centered over the top of the specified window. You can provide either a Lister or a Tab object, or another Dialog. If you are showing this dialog in response to the OnAboutScript event, you can also pass the value of the AboutData.window property.
+	 * Use this to specify the parent window of the dialog. The dialog will appear centered over the top of the specified window. You can provide either a Lister or a Tab object, or another Dialog. If you are showing this dialog in response to the OnAboutScript event, you can also pass the value of the AboutData.window property.
 	 *
 	 * You only need to set this property if you obtain the Dialog option from the DOpus.Dlg method. If the Dialog object comes from one of the other objects (e.g. Tab.Dlg) then its parent window will already be set to the window which launched the action your script is responding to.
 	 */
 	window: DOpusLister;
 
 	/**
-	 * Specifies the x-position of a script dialog. Use the position property to control how the position is interpreted. After the dialog has been displayed you can change this property to move the dialog around on-screen.
+	 * Specifies the x-position of a script dialog. Use the position property to control how the position is interpreted. After the dialog has been displayed you can change this property to move the dialog around on-screen.
 	 */
 	x: number;
 
 	/**
-	 * Specifies the y-position of a script dialog. Use the position property to control how the position is interpreted. After the dialog has been displayed you can change this property to move the dialog around on-screen.
+	 * Specifies the y-position of a script dialog. Use the position property to control how the position is interpreted. After the dialog has been displayed you can change this property to move the dialog around on-screen.
 	 */
 	y: number;
 
@@ -1893,7 +1893,7 @@ interface DOpusDialogListColumn {
 	readonly sort: number;
 
 	/**
-	 * Returns or sets the column's width in pixels. Set it to -1 to automatically size the column to fit its content. You can automatically resize all columns at once using the DialogListColumns.AutoSize method.
+	 * Returns or sets the column's width in pixels. Set it to -1 to automatically size the column to fit its content. You can automatically resize all columns at once using the DialogListColumns.AutoSize method.
 	 */
 	readonly width: number;
 
@@ -1969,7 +1969,7 @@ interface DOpusDialogListItem {
 	/**
 	 * Set or query the color used for the background (fill) of this item. This is in the format **#RRGGBB** (hexadecimal) or **RRR,GGG,BBB** (decimal).
 	 *
-	 * Currently only items in list view controls are supported for this property.
+	 * Currently only items in list view controls are supported for this property.
 	 */
 	readonly bg: string;
 
@@ -2003,7 +2003,7 @@ interface DOpusDialogListItem {
 	readonly group: number;
 
 	/**
-	 * For a list view control, returns or sets the icon associated with this item. You can specify the path of a file or folder to use its icon, or a file extension (e.g. ".txt") to use a generic filetype icon. You can also set it to "dir", "file", "ftp" and "ftps" to use generic icons. You can also extract an icon from a DLL or EXE by providing the path of the file followed by a comma and then the icon index within the file.
+	 * For a list view control, returns or sets the icon associated with this item. You can specify the path of a file or folder to use its icon, or a file extension (e.g. ".txt") to use a generic filetype icon. You can also set it to "dir", "file", "ftp" and "ftps" to use generic icons. You can also extract an icon from a DLL or EXE by providing the path of the file followed by a comma and then the icon index within the file.
 	 */
 	readonly icon: string;
 
@@ -2032,9 +2032,9 @@ interface DOpusDialogListItem {
 	readonly style: string;
 
 	/**
-	 * For a list view control in Details mode, returns a collection of strings that lets you query or change the text of the item's sub-items. There will be one string in the collection for each column in the list, excluding the first column.
+	 * For a list view control in Details mode, returns a collection of strings that lets you query or change the text of the item's sub-items. There will be one string in the collection for each column in the list, excluding the first column.
 	 *
-	 * For example, assuming the list has three columns in total, the string for the first column would be set using the name property above. The strings for the second and third columns would be set with subitems(0) and subitems(1).
+	 * For example, assuming the list has three columns in total, the string for the first column would be set using the name property above. The strings for the second and third columns would be set with subitems(0) and subitems(1).
 	 */
 	readonly subitems: string;
 
@@ -2079,7 +2079,7 @@ interface DOpusDisplayModeChangeData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the tab the display mode changed in.
+	 * Returns a Tab object representing the tab the display mode changed in.
 	 */
 	readonly tab: DOpusTab;
 
@@ -2459,7 +2459,7 @@ declare var DOpusFactory: DOpusFactoryConstructor;
 interface DOpusDoubleClickData {
 
 	/**
-	 * Set this property to False to prevent the OnDoubleClick event being called for any further files during this operation (this is only effective if more than one file was double-clicked). Any remaining files will be opened according to their default handlers.
+	 * Set this property to False to prevent the OnDoubleClick event being called for any further files during this operation (this is only effective if more than one file was double-clicked). Any remaining files will be opened according to their default handlers.
 	 */
 	call: boolean;
 
@@ -2469,7 +2469,7 @@ interface DOpusDoubleClickData {
 	cont: boolean;
 
 	/**
-	 * Returns True if your OnDoubleClick event is being called with only a path (via the path property) and not a full Item object. This will occur if you set the ScriptInitData.early_dblclk property to True when initialising your script.
+	 * Returns True if your OnDoubleClick event is being called with only a path (via the path property) and not a full Item object. This will occur if you set the ScriptInitData.early_dblclk property to True when initialising your script.
 	 *
 	 * When early is True, you can set the skipfull to True to prevent the second call with a full Item object.
 	 */
@@ -2481,7 +2481,7 @@ interface DOpusDoubleClickData {
 	readonly is_dir: boolean;
 
 	/**
-	 * Returns a Item object representing the item that was double-clicked. This property is only present if the early property is False.
+	 * Returns a Item object representing the item that was double-clicked. This property is only present if the early property is False.
 	 */
 	readonly item: DOpusItem;
 
@@ -2510,12 +2510,12 @@ interface DOpusDoubleClickData {
 	readonly qualifiers: string;
 
 	/**
-	 * When the early property is True, set skipfull to True to prevent your OnDoubleClick event from being called a second time.
+	 * When the early property is True, set skipfull to True to prevent your OnDoubleClick event from being called a second time.
 	 */
 	readonly skipfull: boolean;
 
 	/**
-	 * Returns a Tab object representing the tab that the item was double-clicked in.
+	 * Returns a Tab object representing the tab that the item was double-clicked in.
 	 */
 	readonly tab: DOpusTab;
 
@@ -2559,7 +2559,7 @@ interface DOpusDPI {
 interface DOpusDrive extends String {
 
 	/**
-	 * Returns a FileSize object indicating the available free space on the drive.
+	 * Returns a FileSize object indicating the available free space on the drive.
 	 */
 	readonly avail: DOpusFileSize;
 
@@ -2579,7 +2579,7 @@ interface DOpusDrive extends String {
 	readonly flags: number;
 
 	/**
-	 * Returns a FileSize object indicating the total free space on the drive.
+	 * Returns a FileSize object indicating the total free space on the drive.
 	 */
 	readonly free: DOpusFileSize;
 
@@ -2589,7 +2589,7 @@ interface DOpusDrive extends String {
 	readonly label: string;
 
 	/**
-	 * Returns a FileSize object indicating the total size of the drive.
+	 * Returns a FileSize object indicating the total size of the drive.
 	 */
 	readonly total: DOpusFileSize;
 
@@ -2663,7 +2663,7 @@ interface DOpusFavorite extends String {
 	readonly separator: boolean;
 
 	/**
-	 * Returns the path this favorite folder refers to as a Path object.
+	 * Returns the path this favorite folder refers to as a Path object.
 	 */
 	readonly path: DOpusPath;
 
@@ -2764,12 +2764,12 @@ interface DOpusFile extends String {
 	readonly path: DOpusPath;
 
 	/**
-	 * Returns a FileSize object representing the size of this file, in bytes.
+	 * Returns a FileSize object representing the size of this file, in bytes.
 	 */
 	readonly size: DOpusFileSize;
 
 	/**
-	 * Returns a FileSize object representing the current position of the read or write cursor within this file, in bytes.
+	 * Returns a FileSize object representing the current position of the read or write cursor within this file, in bytes.
 	 */
 	readonly tell: DOpusFileSize;
 
@@ -3005,12 +3005,12 @@ interface DOpusFileGroup extends String {
 	readonly count: number;
 
 	/**
-	 * Returns the id number of this group. Id numbers are arbitrary - you shouldn't place any meaning on the actual value, but you can compare the id fields as an easy way to tell if two items are in the same group.
+	 * Returns the id number of this group. Id numbers are arbitrary - you shouldn't place any meaning on the actual value, but you can compare the id fields as an easy way to tell if two items are in the same group.
 	 */
 	readonly id: number;
 
 	/**
-	 * Returns a collection of Item objects that represents all the files and folders in this group.
+	 * Returns a collection of Item objects that represents all the files and folders in this group.
 	 */
 	readonly members: DOpusItem;
 
@@ -3045,7 +3045,7 @@ interface DOpusFileOperationCompleteData {
 	readonly data: any;
 
 	/**
-	 * Returns a Path object representing the destination path of the operation.
+	 * Returns a Path object representing the destination path of the operation.
 	 */
 	readonly dest: DOpusPath;
 
@@ -3059,17 +3059,17 @@ interface DOpusFileOperationCompleteData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns True the first time the OnFileOperationComplete event is called. You should examine the action and other properties and return True if you decide you want notification about this operation. This will be False when you are called the second time, when the operation is complete.
+	 * Returns True the first time the OnFileOperationComplete event is called. You should examine the action and other properties and return True if you decide you want notification about this operation. This will be False when you are called the second time, when the operation is complete.
 	 */
 	readonly query: boolean;
 
 	/**
-	 * Returns a Path object representing the source path of the operation.
+	 * Returns a Path object representing the source path of the operation.
 	 */
 	readonly source: DOpusPath;
 
 	/**
-	 * Returns a Tab object representing the source folder tab.
+	 * Returns a Tab object representing the source folder tab.
 	 */
 	readonly tab: DOpusTab;
 
@@ -3278,7 +3278,7 @@ interface DOpusFlatViewChangeData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the tab the Flat View mode changed in.
+	 * Returns a Tab object representing the tab the Flat View mode changed in.
 	 */
 	readonly tab: DOpusTab;
 
@@ -3411,12 +3411,12 @@ interface DOpusFormat {
 	readonly autosize: boolean;
 
 	/**
-	 * Returns a collection of Column objects that represent all the individual columns currently added to the display.
+	 * Returns a collection of Column objects that represent all the individual columns currently added to the display.
 	 */
 	readonly columns: DOpusColumn;
 
 	/**
-	 * Returns a Vector of strings representing the explanation of the current folder format (the same text visible when hovering the mouse over the format lock icon in the status bar).
+	 * Returns a Vector of strings representing the explanation of the current folder format (the same text visible when hovering the mouse over the format lock icon in the status bar).
 	 */
 	readonly format_explain: DOpusVector<string>;
 
@@ -3441,7 +3441,7 @@ interface DOpusFormat {
 	readonly group_reverse: boolean;
 
 	/**
-	 * Returns a FileAttr object indicating the file attributes that are hidden (any items with these attributes set will be hidden from the display).
+	 * Returns a FileAttr object indicating the file attributes that are hidden (any items with these attributes set will be hidden from the display).
 	 */
 	readonly hide_attr: DOpusFileAttr;
 
@@ -3471,7 +3471,7 @@ interface DOpusFormat {
 	readonly hide_files_regex: boolean;
 
 	/**
-	 * Returns a FileAttr object indicating the folder attributes that are hidden (any folders with these attributes set will be hidden from the display). If the separate folder attribute filter is disabled this property will return the string "off".
+	 * Returns a FileAttr object indicating the folder attributes that are hidden (any folders with these attributes set will be hidden from the display). If the separate folder attribute filter is disabled this property will return the string "off".
 	 */
 	readonly hide_folder_attr: DOpusFileAttr;
 
@@ -3496,7 +3496,7 @@ interface DOpusFormat {
 	readonly manual_sort_name: string;
 
 	/**
-	 * If manual sort is active, returns a SortOrder object which lets you query and change the sort order.
+	 * If manual sort is active, returns a SortOrder object which lets you query and change the sort order.
 	 */
 	readonly manual_sort_order: DOpusSortOrder;
 
@@ -3521,7 +3521,7 @@ interface DOpusFormat {
 	readonly reverse_sort: boolean;
 
 	/**
-	 * Returns a FileAttr object indicating the file attributes that are shown (only items with these attributes set will be shown in the display).
+	 * Returns a FileAttr object indicating the file attributes that are shown (only items with these attributes set will be shown in the display).
 	 */
 	readonly show_attr: DOpusFileAttr;
 
@@ -3546,7 +3546,7 @@ interface DOpusFormat {
 	readonly show_files_regex: boolean;
 
 	/**
-	 * Returns a FileAttr object indicating the folder attributes that are shown (only folders with these attributes set will be shown in the display). If the separate folder attribute filter is disabled this property will return the string "off".
+	 * Returns a FileAttr object indicating the folder attributes that are shown (only folders with these attributes set will be shown in the display). If the separate folder attribute filter is disabled this property will return the string "off".
 	 */
 	readonly show_folder_attr: DOpusFileAttr;
 
@@ -3556,7 +3556,7 @@ interface DOpusFormat {
 	readonly sort_ext: boolean;
 
 	/**
-	 * Returns a Column object representing the current sort field.
+	 * Returns a Column object representing the current sort field.
 	 */
 	readonly sort_field: DOpusColumn;
 
@@ -3796,19 +3796,19 @@ interface DOpusFSUtil {
 interface DOpusFunc {
 
 	/**
-	 * Returns an Args object that provides access to any arguments given on the command line that invoked this script. This is used when the script has added an internal command to Opus. A command line template can be provided when the command is added, and any arguments the user provides on the command line for the script command will be available via this object.
+	 * Returns an Args object that provides access to any arguments given on the command line that invoked this script. This is used when the script has added an internal command to Opus. A command line template can be provided when the command is added, and any arguments the user provides on the command line for the script command will be available via this object.
 	 *
 	 * For most use the argsmap property may be an easier way to access your command's arguments.
 	 */
 	readonly args: DOpusArgs;
 
 	/**
-	 * Returns a Map object that provides keyword lookup for each of the arguments given on the command line. An argument will only be present in the Map if it was used on the command line, so you can easily check which arguments are present using the Map.exists() method.
+	 * Returns a Map object that provides keyword lookup for each of the arguments given on the command line. An argument will only be present in the Map if it was used on the command line, so you can easily check which arguments are present using the Map.exists() method.
 	 */
 	readonly argsMap: DOpusMap;
 
 	/**
-	 * This property returns a pre-filled Command object that can be used to run commands against the source and destination tabs. Using this object is the equivalent of calling DOpusFactory.Command and setting the source and destination tabs manually.
+	 * This property returns a pre-filled Command object that can be used to run commands against the source and destination tabs. Using this object is the equivalent of calling DOpusFactory.Command and setting the source and destination tabs manually.
 	 */
 	readonly command: DOpusCommand;
 
@@ -3860,12 +3860,12 @@ interface DOpusFunc {
 interface DOpusGetCopyQueueNameData {
 
 	/**
-	 * Returns a Path object representing the destination path of the copy operation.
+	 * Returns a Path object representing the destination path of the copy operation.
 	 */
 	readonly dest: DOpusPath;
 
 	/**
-	 * Returns a Tab object representing the destination folder tab.
+	 * Returns a Tab object representing the destination folder tab.
 	 */
 	readonly destTab: DOpusTab;
 
@@ -3885,17 +3885,17 @@ interface DOpusGetCopyQueueNameData {
 	readonly name: string;
 
 	/**
-	 * Returns a Path object representing the source path of the copy operation.
+	 * Returns a Path object representing the source path of the copy operation.
 	 */
 	readonly source: DOpusPath;
 
 	/**
-	 * Returns a Tab object representing the source folder tab.
+	 * Returns a Tab object representing the source folder tab.
 	 */
 	readonly sourceTab: DOpusTab;
 
 	/**
-	 * Returns a binary string indicating the physical drive indices that the source path is located on (if any). For example, 00001000000000000000000000 indicates that drive E: is the source drive.
+	 * Returns a binary string indicating the physical drive indices that the source path is located on (if any). For example, 00001000000000000000000000 indicates that drive E: is the source drive.
 	 */
 	readonly source_drives: string;
 
@@ -3908,17 +3908,17 @@ interface DOpusGetCopyQueueNameData {
 interface DOpusGetCustomFieldData {
 
 	/**
-	 * Returns a CustomFieldData object, that the script can use to add custom fields to the Rename dialog. Each property added to the object in this method will be create a new field in the dialog, allowing the user to supply additional information to your rename script.
+	 * Returns a CustomFieldData object, that the script can use to add custom fields to the Rename dialog. Each property added to the object in this method will be create a new field in the dialog, allowing the user to supply additional information to your rename script.
 	 */
 	readonly fields: DOpusCustomFieldData;
 
 	/**
-	 * This lets you assign labels to your script's custom fields, that are shown to the user in the Rename dialog. To do this, set this property to a Map created via the DOpusFactory.Map method, filled with name/label string pairs.
+	 * This lets you assign labels to your script's custom fields, that are shown to the user in the Rename dialog. To do this, set this property to a Map created via the DOpusFactory.Map method, filled with name/label string pairs.
 	 */
 	readonly field_labels: DOpusMap;
 
 	/**
-	 * This lets you assign "cue banners" to any edit fields created by your script. A cue banner is displayed inside an empty edit field to prompt the user what sort of data the field expects. To use this, set this property to a Map created via the DOpusFactory.Map method, filled with name/banner string pairs.
+	 * This lets you assign "cue banners" to any edit fields created by your script. A cue banner is displayed inside an empty edit field to prompt the user what sort of data the field expects. To use this, set this property to a Map created via the DOpusFactory.Map method, filled with name/banner string pairs.
 	 */
 	readonly field_tips: DOpusMap;
 
@@ -3965,7 +3965,7 @@ interface DOpusGetHelpContentData {
 interface DOpusGetNewNameData {
 
 	/**
-	 * Returns a CustomFieldData object which provides the values of any custom fields your script added to the Rename dialog.
+	 * Returns a CustomFieldData object which provides the values of any custom fields your script added to the Rename dialog.
 	 */
 	readonly custom: DOpusCustomFieldData;
 
@@ -4028,7 +4028,7 @@ interface DOpusGlobalFilters {
 	readonly file: string;
 
 	/**
-	 * Returns the global folder filter wildcard pattern. If the wildcard is configured to use regular expressions, it will have a regex: prefix in front of the pattern.
+	 * Returns the global folder filter wildcard pattern. If the wildcard is configured to use regular expressions, it will have a regex: prefix in front of the pattern.
 	 */
 	readonly folder: string;
 
@@ -4312,7 +4312,7 @@ interface DOpusItem extends String {
 	 * * **16384** - encrypted
 	 * * **524288** - pinned
 	 *
-	 * Using the fileattr property, which returns a FileAttr object, may be easier than dealing with the raw attribute flags.
+	 * Using the fileattr property, which returns a FileAttr object, may be easier than dealing with the raw attribute flags.
 	 */
 	readonly attr: number;
 
@@ -4354,17 +4354,17 @@ interface DOpusItem extends String {
 	readonly ext: string;
 
 	/**
-	 * Returns the filename extension, taking multi-part extensions into account. For example, a file called "file.part1.rar" might return ".rar" for ext but ".part1.rar" for ext_m.
+	 * Returns the filename extension, taking multi-part extensions into account. For example, a file called "file.part1.rar" might return ".rar" for ext but ".part1.rar" for ext_m.
 	 */
 	readonly ext_m: string;
 
 	/**
-	 * Returns True if the item failed when used by a command. This is only meaningful in conjunction with the Command.files collection - once the command has returned, this property will indicate success or failure on a per-file basis.
+	 * Returns True if the item failed when used by a command. This is only meaningful in conjunction with the Command.files collection - once the command has returned, this property will indicate success or failure on a per-file basis.
 	 */
 	readonly failed: boolean;
 
 	/**
-	 * Returns a FileAttr object that represents the item's attributes.
+	 * Returns a FileAttr object that represents the item's attributes.
 	 */
 	readonly fileattr: DOpusFileAttr;
 
@@ -4381,7 +4381,7 @@ interface DOpusItem extends String {
 	readonly focus: boolean;
 
 	/**
-	 * Returns True for folder items if their size has been calculated by, for example, the GetSizes command. If False, the size property will be unreliable for folders.
+	 * Returns True for folder items if their size has been calculated by, for example, the GetSizes command. If False, the size property will be unreliable for folders.
 	 */
 	readonly got_size: boolean;
 
@@ -4393,7 +4393,7 @@ interface DOpusItem extends String {
 	readonly groups: DOpusVector<DOpusFiletypeGroup>;
 
 	/**
-	 * Similar to the groups property, except a FiletypeGroups object is returned instead of a Vector.
+	 * Similar to the groups property, except a FiletypeGroups object is returned instead of a Vector.
 	 */
 	readonly groupsObject: DOpusFiletypeGroups;
 
@@ -4423,7 +4423,7 @@ interface DOpusItem extends String {
 	readonly is_symlink: boolean;
 
 	/**
-	 * Returns a Metadata object that provides access to the item's metadata.
+	 * Returns a Metadata object that provides access to the item's metadata.
 	 */
 	readonly metadata: DOpusMetadata;
 
@@ -4448,7 +4448,7 @@ interface DOpusItem extends String {
 	readonly name_stem: string;
 
 	/**
-	 * Returns the filename "stem" of the item, taking multi-part extensions into account. For example, a file called "file.part1.rar" might return "file.part1" for name_stem but "file" for name_stem_m.
+	 * Returns the filename "stem" of the item, taking multi-part extensions into account. For example, a file called "file.part1.rar" might return "file.part1" for name_stem but "file" for name_stem_m.
 	 */
 	readonly name_stem_m: string;
 
@@ -4673,7 +4673,7 @@ interface DOpusLister {
 	readonly title: string;
 
 	/**
-	 * Returns a collection of Toolbar objects representing all currently open toolbars in this Lister.
+	 * Returns a collection of Toolbar objects representing all currently open toolbars in this Lister.
 	 */
 	readonly toolbars: DOpusToolbar;
 
@@ -4706,7 +4706,7 @@ interface DOpusLister {
 	readonly utilPane: number;
 
 	/**
-	 * This Vars object represents all defined variables with Lister scope (that are scoped to this Lister).
+	 * This Vars object represents all defined variables with Lister scope (that are scoped to this Lister).
 	 */
 	readonly vars: DOpusVars;
 
@@ -4792,7 +4792,7 @@ interface DOpusListerResizeData {
 	readonly height: number;
 
 	/**
-	 * Returns a Lister object representing the Lister that was resized.
+	 * Returns a Lister object representing the Lister that was resized.
 	 */
 	readonly lister: DOpusLister;
 
@@ -4812,7 +4812,7 @@ interface DOpusListerUIChangeData {
 	readonly change: string;
 
 	/**
-	 * Returns a Lister object representing the Lister that is changing.
+	 * Returns a Lister object representing the Lister that is changing.
 	 */
 	readonly lister: DOpusLister;
 
@@ -4878,9 +4878,13 @@ interface DOpusListerUIChangeData {
  * @see {DOpusVector}
  */
 interface DOpusMap {
+	/**
+	 * Returns the value of the specified key.
+	 */
+	(key: string): any;
 
 	/**
-	 * Returns the number of elements the Map currently holds.
+	 * Returns the number of elements the Map currently holds.
 	 */
 	readonly count: number;
 
@@ -4953,52 +4957,52 @@ interface DOpusMap {
 interface DOpusMetadata extends String {
 
 	/**
-	 * Returns an AudioMeta object providing access to audio metadata. The properties of this object are generally returned as their appropriate underlying type (e.g. a numeric field like "track number" will be returned as an int).
+	 * Returns an AudioMeta object providing access to audio metadata. The properties of this object are generally returned as their appropriate underlying type (e.g. a numeric field like "track number" will be returned as an int).
 	 */
 	readonly audio: DOpusAudioMeta;
 
 	/**
-	 * Returns an AudioMeta object that provides access to the unmodified text form of the audio metadata. This provides access to the same text as displayed in a Lister. For example, a numeric field like "track number" would be returned as a string rather than an int.
+	 * Returns an AudioMeta object that provides access to the unmodified text form of the audio metadata. This provides access to the same text as displayed in a Lister. For example, a numeric field like "track number" would be returned as a string rather than an int.
 	 */
 	readonly audio_text: DOpusAudioMeta;
 
 	/**
-	 * Returns a DocMeta object providing access to document metadata.
+	 * Returns a DocMeta object providing access to document metadata.
 	 */
 	readonly doc: DOpusDocMeta;
 
 	/**
-	 * Returns a DocMeta object that provides access to the unmodified text form of the document metadata.
+	 * Returns a DocMeta object that provides access to the unmodified text form of the document metadata.
 	 */
 	readonly doc_text: DOpusDocMeta;
 
 	/**
-	 * Returns an ExeMeta object providing access to executable (program) metadata.
+	 * Returns an ExeMeta object providing access to executable (program) metadata.
 	 */
 	readonly exe: DOpusExeMeta;
 
 	/**
-	 * Returns an ExeMeta object that provides access to the unmodified text form of the program metadata.
+	 * Returns an ExeMeta object that provides access to the unmodified text form of the program metadata.
 	 */
 	readonly exe_text: DOpusExeMeta;
 
 	/**
-	 * Returns a FontMeta object providing access to font file metadata.
+	 * Returns a FontMeta object providing access to font file metadata.
 	 */
 	readonly font: DOpusFontMeta;
 
 	/**
-	 * Returns an ImageMeta object providing access to picture metadata.
+	 * Returns an ImageMeta object providing access to picture metadata.
 	 */
 	readonly image: DOpusImageMeta;
 
 	/**
-	 * Returns an ImageMeta object that provides access to the unmodified text form of the picture metadata.
+	 * Returns an ImageMeta object that provides access to the unmodified text form of the picture metadata.
 	 */
 	readonly image_text: DOpusImageMeta;
 
 	/**
-	 * Returns an OtherMeta object that provides access to miscellaneous metadata.
+	 * Returns an OtherMeta object that provides access to miscellaneous metadata.
 	 */
 	readonly other: DOpusOtherMeta;
 
@@ -5028,7 +5032,7 @@ interface DOpusMetadata extends String {
 interface DOpusMsg extends Boolean {
 
 	/**
-	 * If the event type is checked, this indicates the check state of the item. If checkboxes are used in automatic mode, this will be the new check state of the item. In manual mode, this will indicate the existing state and it's up to you to change the state if desired.
+	 * If the event type is checked, this indicates the check state of the item. If checkboxes are used in automatic mode, this will be the new check state of the item. In manual mode, this will indicate the existing state and it's up to you to change the state if desired.
 	 *
 	 * Check states are:
 	 *
@@ -5148,9 +5152,9 @@ interface DOpusMsg extends Boolean {
 	readonly tab: string;
 
 	/**
-	 * For the dblclk, editchange and selchange events, returns the current contents of the edit field (or selected item label).
+	 * For the dblclk, editchange and selchange events, returns the current contents of the edit field (or selected item label).
 	 *
-	 * For the tab event, indicates which event occurred in the monitored tab. Possible values are select, navigate, filechange, activate, srcdst, view, flat, and close (sent if the tab is closed while you are monitoring it).
+	 * For the tab event, indicates which event occurred in the monitored tab. Possible values are select, navigate, filechange, activate, srcdst, view, flat, and close (sent if the tab is closed while you are monitoring it).
 	 *
 	 * For the drag event, this indicates which button is being used to drag (left or right).
 	 */
@@ -5170,7 +5174,7 @@ interface DOpusOpenListerData {
 	readonly after: boolean;
 
 	/**
-	 * Returns a Lister object representing the newly opened Lister.
+	 * Returns a Lister object representing the newly opened Lister.
 	 */
 	readonly lister: DOpusLister;
 
@@ -5201,7 +5205,7 @@ interface DOpusOpenTabData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the newly opened tab.
+	 * Returns a Tab object representing the newly opened tab.
 	 */
 	readonly tab: DOpusTab;
 
@@ -5229,7 +5233,7 @@ interface DOpusOtherMeta {
 	readonly dirCountTotal: number;
 
 	/**
-	 * For a folder, the size of which has been calculated via GetSizes or similar, this provides the number of files directly located in that folder.
+	 * For a folder, the size of which has been calculated via GetSizes or similar, this provides the number of files directly located in that folder.
 	 */
 	readonly fileCount: number;
 
@@ -5254,7 +5258,7 @@ interface DOpusOtherMeta {
 	readonly rating: number;
 
 	/**
-	 * Returns a Path object representing the target path of shortcuts and links.
+	 * Returns a Path object representing the target path of shortcuts and links.
 	 */
 	readonly target: DOpusPath;
 
@@ -5740,17 +5744,17 @@ interface DOpusResults {
 	readonly result: number;
 
 	/**
-	 * This property returns a collection of Tab objects representing any new tabs created by the command.
+	 * This property returns a collection of Tab objects representing any new tabs created by the command.
 	 */
 	readonly newTabs: DOpusTab;
 
 	/**
-	 * This property returns a collection of Lister objects representing any new Listers created by the command.
+	 * This property returns a collection of Lister objects representing any new Listers created by the command.
 	 */
 	readonly newListers: DOpusLister;
 
 	/**
-	 * This property returns a collection of Viewer objects representing any new image viewers created by the command. (This is only for standalone viewers, not the viewer pane.)
+	 * This property returns a collection of Viewer objects representing any new image viewers created by the command. (This is only for standalone viewers, not the viewer pane.)
 	 */
 	readonly newViewers: DOpusViewer;
 
@@ -5763,7 +5767,7 @@ interface DOpusResults {
 interface DOpusScript extends DOpusVars {
 
 	/**
-	 * Returns a ScriptConfig object representing the configuration values for this script. In the OnInit method a script can define the properties that make up its configuration - the user can then edit these values in Preferences. The object returned by the config property represents the values that the user has chosen.
+	 * Returns a ScriptConfig object representing the configuration values for this script. In the OnInit method a script can define the properties that make up its configuration - the user can then edit these values in Preferences. The object returned by the config property represents the values that the user has chosen.
 	 */
 	readonly config: DOpusScriptConfig;
 
@@ -5773,7 +5777,7 @@ interface DOpusScript extends DOpusVars {
 	readonly file: string;
 
 	/**
-	 * Returns a Vars object that represents the variables that are scoped to this particular script. This allows scripts to use variables that persist from one invocation of the script to another.
+	 * Returns a Vars object that represents the variables that are scoped to this particular script. This allows scripts to use variables that persist from one invocation of the script to another.
 	 */
 	readonly vars: DOpusVars;
 
@@ -5860,7 +5864,7 @@ interface DOpusScriptColumn {
 	/**
 	 * For graph columns, specifies the first graph color set. The graph will be displayed in these colors as long as its percentage is below the threshold.
 	 *
-	 * You can either specify a single color (in r,g,b or #rrggbb format), in which case the graph will be a flat solid color, or exactly five colors to configure the graph's gradient. In the second case, the five colors correspond to outer bright, inner bright, inner dark, outer dark, and flat. The first four control the gradient and the fifth (flat) is used when gradients are disabled. 
+	 * You can either specify a single color (in r,g,b or #rrggbb format), in which case the graph will be a flat solid color, or exactly five colors to configure the graph's gradient. In the second case, the five colors correspond to outer bright, inner bright, inner dark, outer dark, and flat. The first four control the gradient and the fifth (flat) is used when gradients are disabled. 
 	 *
 	 * The graph_colors property returns a Vector; you need to use the push_back() method to add your colors to it.
 	 */
@@ -5872,7 +5876,7 @@ interface DOpusScriptColumn {
 	graph_colors2: DOpusVector<object>;
 
 	/**
-	 * For graph columns, specifies the percentage threshold at which the graph will switch from the first color set to the second (e.g. a blue graph goes red to indicate a drive is nearly full). Set the threshold to -1 to disable the second color set altogether.
+	 * For graph columns, specifies the percentage threshold at which the graph will switch from the first color set to the second (e.g. a blue graph goes red to indicate a drive is nearly full). Set the threshold to -1 to disable the second color set altogether.
 	 */
 	graph_threshold: number;
 
@@ -5902,7 +5906,7 @@ interface DOpusScriptColumn {
 	keyScroll: boolean;
 
 	/**
-	 * Use this to set a label for the column. This is displayed in the column header when the column is added to a Details/Power mode file display (unless overridden by the header property), and in various column lists such as in the Folder Options dialog.
+	 * Use this to set a label for the column. This is displayed in the column header when the column is added to a Details/Power mode file display (unless overridden by the header property), and in various column lists such as in the Folder Options dialog.
 	 */
 	label: string;
 
@@ -6054,7 +6058,7 @@ interface DOpusScriptColumnData {
 	group_type: string;
 
 	/**
-	 * Returns an Item object representing the file or folder that Opus wants the script to return the column value for.
+	 * Returns an Item object representing the file or folder that Opus wants the script to return the column value for.
 	 */
 	item: DOpusItem;
 
@@ -6066,7 +6070,7 @@ interface DOpusScriptColumnData {
 	sort: any;
 
 	/**
-	 * Returns a Tab object representing the tab that contains the item.
+	 * Returns a Tab object representing the tab that contains the item.
 	 */
 	tab: DOpusTab;
 
@@ -6114,7 +6118,7 @@ interface DOpusScriptColumnData {
 	value: any;
 
 	/**
-	 * This returns the value associated with this column via ScriptColumn.userdata (if any) when the column was added.
+	 * This returns the value associated with this column via ScriptColumn.userdata (if any) when the column was added.
 	 *
 	 * Note that if the ScriptColumn.multicol value is set to True when the column is added then this property will be found inside the columns Map.
 	 */
@@ -6162,7 +6166,7 @@ interface DOpusScriptCommand {
 	name: string;
 
 	/**
-	 * This lets you specify an optional command line template for the command. This is a string in the form **ARGNAME1/MOD,ARGNAME2/MOD,ARGNAME3/MOD,** etc, where ARGNAME is the name of the argument and /MOD are one or more modifiers used to indicate the argument type. The command line template can specify as many arguments as needed.
+	 * This lets you specify an optional command line template for the command. This is a string in the form **ARGNAME1/MOD,ARGNAME2/MOD,ARGNAME3/MOD,** etc, where ARGNAME is the name of the argument and /MOD are one or more modifiers used to indicate the argument type. The command line template can specify as many arguments as needed.
 	 *
 	 * When your command is invoked and its OnScriptCommand event is triggered, any arguments supplied on the command line are parsed according to this template and provided via the ScriptCommandData.func.args property.
 	 */
@@ -6177,12 +6181,12 @@ interface DOpusScriptCommand {
 interface DOpusScriptCommandData {
 
 	/**
-	 * This returns the original command line that invoked the command. If any arguments were provided on the command line they are available in parsed form from the func.args property.
+	 * This returns the original command line that invoked the command. If any arguments were provided on the command line they are available in parsed form from the func.args property.
 	 */
 	readonly cmdline: string;
 
 	/**
-	 * Returns a Func object relating to this function. This provides access to information about the function's environment (source and destination tabs, etc) as well as any variables and parsed command line arguments.
+	 * Returns a Func object relating to this function. This provides access to information about the function's environment (source and destination tabs, etc) as well as any variables and parsed command line arguments.
 	 */
 	readonly func: DOpusFunc;
 
@@ -6220,17 +6224,17 @@ interface DOpusScriptConfig {
 interface DOpusScriptInitData {
 
 	/**
-	 * Returns a ScriptConfig object, that the script can use to initialize its default configuration. Properties added to the object in this method will be displayed to the user in Preferences, allowing them to change their value and thus configure the behavior of the script.
+	 * Returns a ScriptConfig object, that the script can use to initialize its default configuration. Properties added to the object in this method will be displayed to the user in Preferences, allowing them to change their value and thus configure the behavior of the script.
 	 */
 	config: DOpusScriptConfig;
 
 	/**
-	 * This lets you assign descriptions for your script's configuration options that are shown to the user in the editor dialog. To do this, set this property to a Map created via the DOpusFactory.Map method, filled with name/description string pairs.
+	 * This lets you assign descriptions for your script's configuration options that are shown to the user in the editor dialog. To do this, set this property to a Map created via the DOpusFactory.Map method, filled with name/description string pairs.
 	 */
 	config_desc: DOpusMap;
 
 	/**
-	 * This lets you organize your script's configuration options into groups when shown to the user in the editor dialog. The group names are arbitrary - configuration options with the same group name will appear grouped together. Set this property to a Map created via the DOpusFactory.Map method, filled with name/group string pairs.
+	 * This lets you organize your script's configuration options into groups when shown to the user in the editor dialog. The group names are arbitrary - configuration options with the same group name will appear grouped together. Set this property to a Map created via the DOpusFactory.Map method, filled with name/group string pairs.
 	 */
 	config_groups: DOpusMap;
 
@@ -6280,7 +6284,7 @@ interface DOpusScriptInitData {
 	name: string;
 
 	/**
-	 * The OnInit method is called in two different circumstances - once during Opus startup, and again if the script is installed or edited when Opus is already running. This property will return True if the OnInit method is being called during Opus startup, or False for any other time.
+	 * The OnInit method is called in two different circumstances - once during Opus startup, and again if the script is installed or edited when Opus is already running. This property will return True if the OnInit method is being called during Opus startup, or False for any other time.
 	 */
 	readonly startup: boolean;
 
@@ -6290,7 +6294,7 @@ interface DOpusScriptInitData {
 	url: string;
 
 	/**
-	 * Returns a Vars collection of user and script-defined variables that are local to this script. These variables are available to other methods in the script via the Script.vars property.
+	 * Returns a Vars collection of user and script-defined variables that are local to this script. These variables are available to other methods in the script via the Script.vars property.
 	 */
 	readonly vars: DOpusVars;
 
@@ -6323,7 +6327,7 @@ declare var ScriptInitData: DOpusScriptInitData;
 interface DOpusScriptStrings {
 
 	/**
-	 * Returns a Vector of strings representing the languages that strings have been defined for.
+	 * Returns a Vector of strings representing the languages that strings have been defined for.
 	 */
 	readonly langs: DOpusVector<string>;
 
@@ -6409,7 +6413,7 @@ interface DOpusShutdownData {
 interface DOpusSmartFavorite {
 
 	/**
-	 * Returns the path this entry represents, as a Path object.
+	 * Returns the path this entry represents, as a Path object.
 	 */
 	readonly path: DOpusPath;
 
@@ -6494,7 +6498,7 @@ interface DOpusSourceDestData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the tab.
+	 * Returns a Tab object representing the tab.
 	 */
 	readonly tab: DOpusTab;
 
@@ -6521,7 +6525,7 @@ interface DOpusStartupData {
 interface DOpusStringSet {
 
 	/**
-	 * Returns the number of elements the StringSet currently holds.
+	 * Returns the number of elements the StringSet currently holds.
 	 */
 	readonly count: number;
 
@@ -6637,7 +6641,7 @@ interface DOpusStringTools {
 interface DOpusStyleSelectedData {
 
 	/**
-	 * Returns a Lister object representing the Lister that changing style.
+	 * Returns a Lister object representing the Lister that changing style.
 	 */
 	readonly lister: DOpusLister;
 
@@ -6728,14 +6732,14 @@ interface DOpusSysInfo {
 interface DOpusTab {
 
 	/**
-	 * Returns a collection of Item objects that represents all the files and folders currently displayed in this tab.
+	 * Returns a collection of Item objects that represents all the files and folders currently displayed in this tab.
 	 *
-	 * Note: The first time a script accesses this property (and all the other properties that return an Item collection), a snapshot is taken of all the appropriate items. If the script then makes changes to those items (e.g. by creating a new file, modifying the selection, etc), these changes will not be reflected by the collection. To re-synchronize the collection call the Update method on the collection.
+	 * Note: The first time a script accesses this property (and all the other properties that return an Item collection), a snapshot is taken of all the appropriate items. If the script then makes changes to those items (e.g. by creating a new file, modifying the selection, etc), these changes will not be reflected by the collection. To re-synchronize the collection call the Update method on the collection.
 	 */
 	readonly all: DOpusItem;
 
 	/**
-	 * Returns a collection of Path objects that represents the paths in the "backward" history list for this tab (i.e. the folders you would get to by clicking the Back button).
+	 * Returns a collection of Path objects that represents the paths in the "backward" history list for this tab (i.e. the folders you would get to by clicking the Back button).
 	 */
 	readonly backlist: DOpusPath;
 
@@ -6750,7 +6754,7 @@ interface DOpusTab {
 	readonly crumbpath: DOpusPath;
 
 	/**
-	 * Returns a collection of Item objects that represents all the folders currently displayed in this tab.
+	 * Returns a collection of Item objects that represents all the folders currently displayed in this tab.
 	 */
 	readonly dirs: DOpusItem;
 
@@ -6765,12 +6769,12 @@ interface DOpusTab {
 	readonly displayed_label: string;
 
 	/**
-	 * Returns a collection of FileGroup objects that represents all the file groups in the tab (when the tab is grouped). You can use the format.group_by property to test if the tab is grouped or not.
+	 * Returns a collection of FileGroup objects that represents all the file groups in the tab (when the tab is grouped). You can use the format.group_by property to test if the tab is grouped or not.
 	 */
 	readonly filegroups: DOpusFileGroup;
 
 	/**
-	 * Returns a collection of Item objects that represents all the files currently displayed in this tab.
+	 * Returns a collection of Item objects that represents all the files currently displayed in this tab.
 	 */
 	readonly files: DOpusItem;
 
@@ -6780,22 +6784,22 @@ interface DOpusTab {
 	readonly format: DOpusFormat;
 
 	/**
-	 * Returns a collection of Path objects that represents the paths in the "forward" history list for this tab (i.e. the folders you would get to by clicking the Forward button).
+	 * Returns a collection of Path objects that represents the paths in the "forward" history list for this tab (i.e. the folders you would get to by clicking the Forward button).
 	 */
 	readonly forwardlist: DOpusPath;
 
 	/**
-	 * Returns a collection of Item objects that represents all the files and folders currently hidden from this tab.
+	 * Returns a collection of Item objects that represents all the files and folders currently hidden from this tab.
 	 */
 	readonly hidden: DOpusItem;
 
 	/**
-	 * Returns a collection of Item objects that represents all the folders currently hidden from this tab.
+	 * Returns a collection of Item objects that represents all the folders currently hidden from this tab.
 	 */
 	readonly hidden_dirs: DOpusItem;
 
 	/**
-	 * Returns a collection of Item objects that represents all the files currently hidden from this tab
+	 * Returns a collection of Item objects that represents all the files currently hidden from this tab
 	 */
 	readonly hidden_files: DOpusItem;
 
@@ -6805,12 +6809,12 @@ interface DOpusTab {
 	readonly label: string;
 
 	/**
-	 * If this tab is linked to another tab, returns a Tab object representing the linked tab. If this tab is not linked this property returns 0.
+	 * If this tab is linked to another tab, returns a Tab object representing the linked tab. If this tab is not linked this property returns 0.
 	 */
 	readonly linktab: DOpusTab;
 
 	/**
-	 * Returns a Lister object representing the parent Lister that owns this tab.
+	 * Returns a Lister object representing the parent Lister that owns this tab.
 	 */
 	readonly lister: DOpusLister;
 
@@ -6830,7 +6834,7 @@ interface DOpusTab {
 	readonly path: DOpusPath;
 
 	/**
-	 * Returns a QuickFilter object providing information about the state of the quick filter in this tab.
+	 * Returns a QuickFilter object providing information about the state of the quick filter in this tab.
 	 */
 	readonly quickfilter: DOpusQuickFilter;
 
@@ -6840,22 +6844,22 @@ interface DOpusTab {
 	readonly right: boolean;
 
 	/**
-	 * Returns a collection of Item objects that represents all the selected files and folders currently displayed in this tab. Note that if checkbox mode is turned on in the tab, this will be a collection of checked items rather than selected.
+	 * Returns a collection of Item objects that represents all the selected files and folders currently displayed in this tab. Note that if checkbox mode is turned on in the tab, this will be a collection of checked items rather than selected.
 	 */
 	readonly selected: DOpusItem;
 
 	/**
-	 * Returns a collection of Item objects that represents all the selected folders currently displayed in this tab.
+	 * Returns a collection of Item objects that represents all the selected folders currently displayed in this tab.
 	 */
 	readonly selected_dirs: DOpusItem;
 
 	/**
-	 * Returns a collection of Item objects that represents all the selected files currently displayed in this tab
+	 * Returns a collection of Item objects that represents all the selected files currently displayed in this tab
 	 */
 	readonly selected_files: DOpusItem;
 
 	/**
-	 * Returns a TabStats object that provides various information about the tab, including the number of files, number of selected files, total size of selected files, etc. The "selected" counts provided by this object take checkbox mode into account (that is, if checkbox mode is currently turned on, the counts will be for checked files rather than for selected files).
+	 * Returns a TabStats object that provides various information about the tab, including the number of files, number of selected files, total size of selected files, etc. The "selected" counts provided by this object take checkbox mode into account (that is, if checkbox mode is currently turned on, the counts will be for checked files rather than for selected files).
 	 */
 	readonly selstats: DOpusTabStats;
 
@@ -6865,12 +6869,12 @@ interface DOpusTab {
 	readonly source: boolean;
 
 	/**
-	 * Returns a TabStats object that provides various information about the tab, including the number of files, number of selected files, total size of selected files, etc. Unlike selstats, this object does not take checkbox mode into account (so the "selected" counts will refer to selected rather than checked files).
+	 * Returns a TabStats object that provides various information about the tab, including the number of files, number of selected files, total size of selected files, etc. Unlike selstats, this object does not take checkbox mode into account (so the "selected" counts will refer to selected rather than checked files).
 	 */
 	readonly stats: DOpusTabStats;
 
 	/**
-	 * This Vars object represents all defined variables with tab scope (that are scoped to this tab).
+	 * This Vars object represents all defined variables with tab scope (that are scoped to this tab).
 	 */
 	readonly vars: DOpusVars;
 
@@ -6918,7 +6922,7 @@ interface DOpusTabClickData {
 	readonly qualifiers: string;
 
 	/**
-	 * Returns a Tab object representing the tab that was clicked.
+	 * Returns a Tab object representing the tab that was clicked.
 	 */
 	readonly tab: DOpusTab;
 
@@ -6931,7 +6935,7 @@ interface DOpusTabClickData {
 interface DOpusTabGroup {
 
 	/**
-	 * True if the Close existing folder tabs when opening this group option is turned on for this group. Only present when the folder property is False.
+	 * True if the Close existing folder tabs when opening this group option is turned on for this group. Only present when the folder property is False.
 	 */
 	readonly closeExisting: boolean;
 
@@ -6956,7 +6960,7 @@ interface DOpusTabGroup {
 	readonly hidden: boolean;
 
 	/**
-	 * Returns a TabGroupTabList object representing the tabs in this group that open in the left/top side of a dual-display Lister. Only present when the folder property is False and the dual property is True.
+	 * Returns a TabGroupTabList object representing the tabs in this group that open in the left/top side of a dual-display Lister. Only present when the folder property is False and the dual property is True.
 	 */
 	readonly leftTabs: DOpusTabGroupTabList;
 
@@ -6966,12 +6970,12 @@ interface DOpusTabGroup {
 	readonly name: string;
 
 	/**
-	 * Returns a TabGroupTabList object representing the tabs in this group that open in the right/bottom side of a dual-display Lister. Only present when the folder property is False and the dual property is True.
+	 * Returns a TabGroupTabList object representing the tabs in this group that open in the right/bottom side of a dual-display Lister. Only present when the folder property is False and the dual property is True.
 	 */
 	readonly rightTabs: DOpusTabGroupTabList;
 
 	/**
-	 * Returns a TabGroupTabList object representing the tabs in this group. Only present when both the folder and dual properties are False.
+	 * Returns a TabGroupTabList object representing the tabs in this group. Only present when both the folder and dual properties are False.
 	 */
 	readonly tabs: DOpusTabGroupTabList;
 
@@ -7323,17 +7327,17 @@ interface DOpusToolbar extends String {
 	readonly defToolbar: boolean;
 
 	/**
-	 * Returns a collection of Lister objects representing any and all Listers this toolbar is currently open in.
+	 * Returns a collection of Lister objects representing any and all Listers this toolbar is currently open in.
 	 */
 	readonly listers: DOpusLister;
 
 	/**
-	 * Returns a collection of Dock objects representing any currently floating instances of this toolbar.
+	 * Returns a collection of Dock objects representing any currently floating instances of this toolbar.
 	 */
 	readonly docks: DOpusDock;
 
 	/**
-	 * Returns a string indicating the group (position) of a particular instance of this toolbar.
+	 * Returns a string indicating the group (position) of a particular instance of this toolbar.
 	 *
 	 * The returned string will be one of *top, bottom, left, right, center, fdright, fdbottom, tree.*
 	 */
@@ -7355,7 +7359,7 @@ interface DOpusToolbar extends String {
  * The Toolbars object lets you enumerate all the defined toolbars in your Directory Opus configuration (whether currently turned on or not). It's retrieved using the DOpus .Toolbars method.
  * @see {DOpusConstructor}
  *
- * @returns {DOpusToolbar} Returns a collection of Toolbar objects that you can enumerate.
+ * @returns {DOpusToolbar} Returns a collection of Toolbar objects that you can enumerate.
  */
 interface DOpusToolbars extends DOpusToolbar {
 
@@ -7389,7 +7393,7 @@ interface DOpusToolbars extends DOpusToolbar {
 interface DOpusUnorderedSet {
 
 	/**
-	 * Returns the number of elements the UnorderedSet currently holds.
+	 * Returns the number of elements the UnorderedSet currently holds.
 	 */
 	readonly count: number;
 
@@ -7475,7 +7479,7 @@ interface DOpusVar extends String {
 	readonly persist: boolean;
 
 	/**
-	 * Returns the value of the variable. You can set this property to change the value of the variable.You can store any type of variable in a Var object, although not all types can be saved to disk. If you want your variable to be persistent you should only use bool, int, string, date, currency or a Vector of those types.
+	 * Returns the value of the variable. You can set this property to change the value of the variable.You can store any type of variable in a Var object, although not all types can be saved to disk. If you want your variable to be persistent you should only use bool, int, string, date, currency or a Vector of those types.
 	 */
 	readonly value: any;
 
@@ -7663,7 +7667,7 @@ interface DOpusVersion extends String {
 	readonly module: string;
 
 	/**
-	 * The current product version (the release version of Directory Opus as a whole). You can also enumerate or index this as a collection:int to retrieve the individual four digits of the product version.
+	 * The current product version (the release version of Directory Opus as a whole). You can also enumerate or index this as a collection:int to retrieve the individual four digits of the product version.
 	 */
 	readonly product: string;
 
@@ -7841,12 +7845,12 @@ interface DOpusViewer {
 	readonly bottom: number;
 
 	/**
-	 * Returns an Item object representing the currently displayed image.
+	 * Returns an Item object representing the currently displayed image.
 	 */
 	readonly current: DOpusItem;
 
 	/**
-	 * Returns a collection of Item objects representing the images in the viewer's list.
+	 * Returns a collection of Item objects representing the images in the viewer's list.
 	 */
 	readonly files: DOpusItem;
 
@@ -7871,7 +7875,7 @@ interface DOpusViewer {
 	readonly left: number;
 
 	/**
-	 * Returns a Tab object representing the tab that launched the viewer (if there was one, and if it still exists).
+	 * Returns a Tab object representing the tab that launched the viewer (if there was one, and if it still exists).
 	 */
 	readonly parentTab: DOpusTab;
 
@@ -7960,12 +7964,12 @@ interface DOpusViewerEventData {
 	readonly event: string;
 
 	/**
-	 * For the load event, returns an Item object representing the newly loaded image.
+	 * For the load event, returns an Item object representing the newly loaded image.
 	 */
 	readonly item: DOpusItem;
 
 	/**
-	 * Returns a Viewer object representing the viewer the event occurred in.
+	 * Returns a Viewer object representing the viewer the event occurred in.
 	 */
 	readonly viewer: DOpusViewer;
 
@@ -7975,7 +7979,7 @@ interface DOpusViewerEventData {
 	readonly x: number;
 
 	/**
-	 * For the click events, returns the y coordinate within the viewer window that the click occurred.
+	 * For the click events, returns the y coordinate within the viewer window that the click occurred.
 	 */
 	readonly y: number;
 
@@ -8002,7 +8006,7 @@ type DOpusViewerWithoutLastActive = new() => { [P in Exclude<keyof DOpusViewer, 
 interface DOpusViewers extends DOpusViewerWithoutLastActive {
 
 	/**
-	 * Returns a Viewer object representing the most recently active viewer window.
+	 * Returns a Viewer object representing the most recently active viewer window.
 	 */
 	readonly lastActive: DOpusViewer;
 
